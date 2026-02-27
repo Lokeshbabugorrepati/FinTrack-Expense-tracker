@@ -9,25 +9,28 @@ const Home = () => {
         style={{ backgroundImage: "url(/bg_expense_tracker.avif)" }}
       >
         <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-left max-w-2xl" style={{ fontFamily: 'Arial, sans-serif' }}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-black mb-4 sm:mb-6 leading-tight">
+          <div
+            className="text-left max-w-3xl"
+            style={{ fontFamily: "Arial, sans-serif" }}
+          >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black mb-6 sm:mb-8 leading-tight tracking-tight">
               Smart Expense Tracker
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-black mb-6 sm:mb-8 leading-relaxed">
+            <p className="text-xl sm:text-2xl md:text-3xl text-gray-900 mb-8 sm:mb-10 leading-relaxed font-light">
               Take control of your finances with FinTrack. Track expenses,
               analyze spending patterns, and make informed financial decisions
               with beautiful analytics.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
               <Link
                 to="/login"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg text-center rounded-lg font-normal transition-colors shadow-md"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 text-lg font-medium text-center rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               >
                 Login
               </Link>
               <Link
                 to="/register"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg text-center rounded-lg font-normal transition-colors shadow-md"
+                className="bg-white hover:bg-gray-50 text-blue-600 border-2 border-blue-600 px-10 py-4 text-lg font-medium text-center rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               >
                 Register
               </Link>
