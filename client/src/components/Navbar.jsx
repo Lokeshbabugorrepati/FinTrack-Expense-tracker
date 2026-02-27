@@ -38,15 +38,15 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-3">
             <img
               src="/logo_expense_tracker.jpg"
               alt="FinTrack Logo"
-              className="w-10 h-10 rounded-lg object-cover"
+              className="w-14 h-14 rounded-lg object-cover"
             />
-            <span className="font-normal text-xl text-gray-900">FinTrack</span>
+            <span className="font-semibold text-2xl text-black">FinTrack</span>
           </Link>
 
           {/* Desktop Menu */}
@@ -54,7 +54,7 @@ const Navbar = () => {
             <div className="hidden md:flex items-center space-x-6">
               <Link
                 to="/dashboard"
-                className="text-gray-900 hover:text-blue-600 transition-colors font-normal"
+                className="text-black text-lg hover:text-blue-600 transition-colors"
               >
                 Dashboard
               </Link>
@@ -68,20 +68,20 @@ const Navbar = () => {
                   {darkMode ? (
                     <Sun className="w-5 h-5 text-yellow-500" />
                   ) : (
-                    <Moon className="w-5 h-5 text-gray-700" />
+                    <Moon className="w-5 h-5 text-black" />
                   )}
                 </button>
 
                 <div className="flex items-center space-x-2">
-                  <User className="w-5 h-5 text-gray-600" />
-                  <span className="text-sm font-normal text-gray-900">
+                  <User className="w-5 h-5 text-black" />
+                  <span className="text-base text-black">
                     {user?.name}
                   </span>
                 </div>
 
                 <button
                   onClick={handleLogout}
-                  className="flex items-center space-x-1 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-normal"
+                  className="flex items-center space-x-1 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors text-base"
                 >
                   <LogOut className="w-4 h-4" />
                   <span>Logout</span>
@@ -99,18 +99,18 @@ const Navbar = () => {
                 {darkMode ? (
                   <Sun className="w-5 h-5 text-yellow-500" />
                 ) : (
-                  <Moon className="w-5 h-5 text-gray-700" />
+                  <Moon className="w-5 h-5 text-black" />
                 )}
               </button>
               <Link
                 to="/login"
-                className="px-4 py-2 text-gray-900 hover:text-blue-600 transition-colors font-normal"
+                className="px-5 py-2 text-black text-lg hover:text-blue-600 transition-colors"
               >
                 Login
               </Link>
               <Link
                 to="/register"
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors font-normal"
+                className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors text-lg"
               >
                 Register
               </Link>
@@ -123,9 +123,9 @@ const Navbar = () => {
             className="md:hidden p-2 rounded-lg hover:bg-gray-100"
           >
             {mobileMenuOpen ? (
-              <X className="w-6 h-6 text-gray-900" />
+              <X className="w-7 h-7 text-black" />
             ) : (
-              <Menu className="w-6 h-6 text-gray-900" />
+              <Menu className="w-7 h-7 text-black" />
             )}
           </button>
         </div>
@@ -137,7 +137,7 @@ const Navbar = () => {
               <div className="space-y-2">
                 <Link
                   to="/dashboard"
-                  className="flex items-center px-4 py-3 text-gray-900 hover:bg-gray-100 rounded-lg transition-all font-normal"
+                  className="flex items-center px-4 py-3 text-black text-lg hover:bg-gray-100 rounded-lg transition-all"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Dashboard
@@ -145,7 +145,7 @@ const Navbar = () => {
                 <div className="flex items-center justify-between px-4 py-3 bg-gray-50 rounded-lg">
                   <div className="flex items-center">
                     <User className="w-5 h-5 text-blue-600 mr-2" />
-                    <span className="text-sm font-normal text-gray-900">
+                    <span className="text-base text-black">
                       {user?.name}
                     </span>
                   </div>
@@ -156,13 +156,13 @@ const Navbar = () => {
                     {darkMode ? (
                       <Sun className="w-5 h-5 text-yellow-500" />
                     ) : (
-                      <Moon className="w-5 h-5 text-gray-700" />
+                      <Moon className="w-5 h-5 text-black" />
                     )}
                   </button>
                 </div>
                 <button
                   onClick={handleLogout}
-                  className="w-full flex items-center justify-center px-4 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-normal transition-all"
+                  className="w-full flex items-center justify-center px-4 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg text-base transition-all"
                 >
                   <LogOut className="w-4 h-4 mr-2" />
                   Logout
@@ -172,7 +172,7 @@ const Navbar = () => {
               <div className="space-y-2">
                 <button
                   onClick={toggleDarkMode}
-                  className="w-full px-4 py-3 flex items-center justify-center bg-gray-100 rounded-lg font-normal transition-all"
+                  className="w-full px-4 py-3 flex items-center justify-center bg-gray-100 rounded-lg text-base transition-all"
                 >
                   {darkMode ? (
                     <>
@@ -181,21 +181,21 @@ const Navbar = () => {
                     </>
                   ) : (
                     <>
-                      <Moon className="w-5 h-5 text-gray-700 mr-2" />
+                      <Moon className="w-5 h-5 text-black mr-2" />
                       Dark Mode
                     </>
                   )}
                 </button>
                 <Link
                   to="/login"
-                  className="block px-4 py-3 text-center text-gray-900 hover:bg-gray-100 rounded-lg font-normal transition-all"
+                  className="block px-4 py-3 text-center text-black text-lg hover:bg-gray-100 rounded-lg transition-all"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Login
                 </Link>
                 <Link
                   to="/register"
-                  className="block px-4 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-lg text-center font-normal transition-all"
+                  className="block px-4 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-lg text-center text-lg transition-all"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Register

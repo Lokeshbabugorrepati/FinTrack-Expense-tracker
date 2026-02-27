@@ -10,10 +10,10 @@ const Home = () => {
       >
         <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-left max-w-2xl">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-gray-900 mb-4 sm:mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-black mb-4 sm:mb-6 leading-tight">
               Smart Expense Tracker
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-gray-800 mb-6 sm:mb-8 leading-relaxed font-normal">
+            <p className="text-lg sm:text-xl md:text-2xl text-black mb-6 sm:mb-8 leading-relaxed">
               Take control of your finances with FinTrack. Track expenses,
               analyze spending patterns, and make informed financial decisions
               with beautiful analytics.
