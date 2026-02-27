@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
       const storedToken = localStorage.getItem("token");
       if (storedToken) {
         try {
-          const { data } = await api.get("/api/auth/me");
+          const { data } = await api.get("/auth/me");
           setUser(data.data);
           setToken(storedToken);
         } catch (error) {
@@ -38,7 +38,9 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    const { data } = await api.post("/api/auth/login", { email, password });
+    console.log("🔐 Attempting login for:", email);
+    const { data } = await api.post("/auth/login", { email, password });
+    console.log("✅ Login successful:", data.data.name);
     localStorage.setItem("token", data.data.token);
     setUser(data.data);
     setToken(data.data.token);
@@ -46,11 +48,13 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (name, email, password) => {
-    const { data } = await api.post("/api/auth/register", {
+    console.log("📝 Attempting registration for:", email);
+    const { data } = await api.post("/auth/register", {
       name,
       email,
       password,
     });
+    console.log("✅ Registration successful:", data.data.name);
     localStorage.setItem("token", data.data.token);
     setUser(data.data);
     setToken(data.data.token);
@@ -58,6 +62,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
+    console.log("👋 User logging out");
     localStorage.removeItem("token");
     setUser(null);
     setToken(null);
