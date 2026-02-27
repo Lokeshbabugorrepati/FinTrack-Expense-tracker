@@ -37,49 +37,52 @@ app.use(express.urlencoded({ extended: false }));
 const corsOptions = {
   origin: function (origin, callback) {
     // Log every request origin
-    console.log(`🌐 CORS Request from origin: ${origin || 'same-origin'}`);
-    
+    console.log(`🌐 CORS Request from origin: ${origin || "same-origin"}`);
+
     // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) {
-      console.log('✓ Allowing request with no origin');
+      console.log("✓ Allowing request with no origin");
       return callback(null, true);
     }
-    
+
     // Get allowed origins from environment
     const clientURL = process.env.CLIENT_URL || "http://localhost:5173";
     console.log(`🔑 Configured CLIENT_URL: ${clientURL}`);
-    
+
     // Remove trailing slashes for comparison
-    const normalizedOrigin = origin.replace(/\/$/, '');
-    const normalizedClientURL = clientURL.replace(/\/$/, '');
-    
+    const normalizedOrigin = origin.replace(/\/$/, "");
+    const normalizedClientURL = clientURL.replace(/\/$/, "");
+
     // Check if origin matches
     if (normalizedOrigin === normalizedClientURL) {
       console.log(`✓ CORS ALLOWED: Origin matches CLIENT_URL`);
       return callback(null, true);
     }
-    
+
     // Also allow any vercel.app domain for FinTrack (development flexibility)
-    if (normalizedOrigin.includes('fin-track-expense-tracker') && normalizedOrigin.includes('vercel.app')) {
+    if (
+      normalizedOrigin.includes("fin-track-expense-tracker") &&
+      normalizedOrigin.includes("vercel.app")
+    ) {
       console.log(`✓ CORS ALLOWED: Origin is FinTrack Vercel deployment`);
       return callback(null, true);
     }
-    
+
     // Allow localhost for development
-    if (normalizedOrigin.includes('localhost')) {
+    if (normalizedOrigin.includes("localhost")) {
       console.log(`✓ CORS ALLOWED: Localhost development`);
       return callback(null, true);
     }
-    
+
     // Reject other origins
     console.log(`✗ CORS BLOCKED: Origin not allowed`);
     console.log(`   Expected: ${normalizedClientURL}`);
     console.log(`   Received: ${normalizedOrigin}`);
-    callback(new Error('Not allowed by CORS'));
+    callback(new Error("Not allowed by CORS"));
   },
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
 };
 
 app.use(cors(corsOptions));

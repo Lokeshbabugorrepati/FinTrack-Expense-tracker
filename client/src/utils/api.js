@@ -1,11 +1,31 @@
 import axios from "axios";
 
+// Get API URL and ensure it includes /api prefix
+const getAPIBaseURL = () => {
+  const envURL = import.meta.env.VITE_API_URL;
+
+  // If no environment variable, use relative /api (for development with proxy)
+  if (!envURL) {
+    return "/api";
+  }
+
+  // If envURL already ends with /api, use it as-is
+  if (envURL.endsWith("/api")) {
+    return envURL;
+  }
+
+  // Otherwise, append /api
+  return `${envURL}/api`;
+};
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "/api",
+  baseURL: getAPIBaseURL(),
   headers: {
     "Content-Type": "application/json",
   },
 });
+
+console.log("🔧 API Base URL configured:", getAPIBaseURL());
 
 // Add token to requests
 api.interceptors.request.use(
