@@ -9,7 +9,7 @@ const Home = () => {
         style={{ backgroundImage: "url(/bg_expense_tracker.avif)" }}
       >
         <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-left max-w-2xl">
+          <div className="text-left max-w-2xl" style={{ fontFamily: 'Arial, sans-serif' }}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-black mb-4 sm:mb-6 leading-tight">
               Smart Expense Tracker
             </h1>

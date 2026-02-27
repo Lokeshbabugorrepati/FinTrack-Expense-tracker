@@ -74,9 +74,7 @@ const Navbar = () => {
 
                 <div className="flex items-center space-x-2">
                   <User className="w-5 h-5 text-black" />
-                  <span className="text-base text-black">
-                    {user?.name}
-                  </span>
+                  <span className="text-base text-black">{user?.name}</span>
                 </div>
 
                 <button
@@ -104,7 +102,7 @@ const Navbar = () => {
               </button>
               <Link
                 to="/login"
-                className="px-5 py-2 text-black text-lg hover:text-blue-600 transition-colors"
+                className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors text-lg"
               >
                 Login
               </Link>
@@ -145,9 +143,7 @@ const Navbar = () => {
                 <div className="flex items-center justify-between px-4 py-3 bg-gray-50 rounded-lg">
                   <div className="flex items-center">
                     <User className="w-5 h-5 text-blue-600 mr-2" />
-                    <span className="text-base text-black">
-                      {user?.name}
-                    </span>
+                    <span className="text-base text-black">{user?.name}</span>
                   </div>
                   <button
                     onClick={toggleDarkMode}
