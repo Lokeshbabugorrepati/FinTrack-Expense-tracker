@@ -38,10 +38,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    const { data } = await axios.post("/api/auth/login", { email, password });
-    localStorage.setItem("token", data.data.token);
-    axios.defaults.headers.common["Authorization"] =
-      `Bearer ${data.data.topi.post("/api/auth/login", { email, password });
+    const { data } = await api.post("/api/auth/login", { email, password });
     localStorage.setItem("token", data.data.token);
     setUser(data.data);
     setToken(data.data.token);
@@ -61,7 +58,10 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    localStorage.removeItem("token")
+    localStorage.removeItem("token");
+    setUser(null);
+    setToken(null);
+  };
 
   const value = {
     user,
