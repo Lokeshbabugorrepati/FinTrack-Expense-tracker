@@ -49,18 +49,26 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log("═══════════════════════════════════════════════".cyan);
-  console.log(`  🚀 FinTrack Server Running `.green.bold);
-  console.log(`  📍 Port: ${PORT}`.yellow);
-  console.log(
-    `  🌍 Environment: ${process.env.NODE_ENV || "development"}`.yellow,
-  );
-  console.log("═══════════════════════════════════════════════".cyan);
-});
+// Only start server if not in Vercel environment
+if (process.env.NODE_ENV !== "production" || !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log("═══════════════════════════════════════════════".cyan);
+    console.log(`  🚀 FinTrack Server Running `.green.bold);
+    console.log(`  📍 Port: ${PORT}`.yellow);
+    console.log(
+      `  🌍 Environment: ${process.env.NODE_ENV || "development"}`.yellow,
+    );
+    console.log("═══════════════════════════════════════════════".cyan);
+  });
+}
 
 // Handle unhandled promise rejections
 process.on("unhandledRejection", (err, promise) => {
   console.log(`✗ Unhandled Rejection: ${err.message}`.red.bold);
-  process.exit(1);
+  if (process.env.NODE_ENV !== "production") {
+    process.exit(1);
+  }
 });
+
+// Export for Vercel
+export default app;
