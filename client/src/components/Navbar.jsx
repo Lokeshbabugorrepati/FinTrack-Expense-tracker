@@ -40,13 +40,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="bg-gradient-to-r from-primary-500 to-primary-600 p-2 rounded-lg">
-              <div className="w-6 h-6 text-white flex items-center justify-center font-bold text-xl">
-                ₹
-              </div>
-            </div>
-            <span className="font-bold text-xl bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
+          <Link to="/" className="flex items-center">
+            <span className="font-bold text-xl text-gray-900 dark:text-white">
               FinTrack
             </span>
           </Link>

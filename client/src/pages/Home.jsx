@@ -9,7 +9,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
             <div className="inline-block mb-6">
-              <span className="text-6xl sm:text-7xl lg:text-8xl">💰</span>
+              <span className="text-6xl sm:text-7xl lg:text-8xl">₹</span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-primary-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6 leading-tight">
               Smart Expense Tracker
@@ -92,24 +92,6 @@ const Home = () => {
               </p>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* CTA Section */}
-      <div className="bg-gradient-to-r from-primary-600 via-purple-600 to-pink-600 py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            🚀 Ready to Take Control of Your Finances?
-          </h2>
-          <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Join thousands of users who are already managing their money smarter
-          </p>
-          <Link
-            to="/register"
-            className="inline-block bg-white text-primary-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all shadow-2xl hover:shadow-3xl hover:-translate-y-1 transform"
-          >
-            ✨ Start Tracking Today
-          </Link>
         </div>
       </div>
     </div>

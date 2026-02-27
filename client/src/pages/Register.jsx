@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { toast } from "react-toastify";
-import { User, Mail, Lock, UserPlus } from "lucide-react";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -65,26 +64,22 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 py-8 sm:py-12 bg-gradient-to-br from-primary-50 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-purple-900/20 dark:to-pink-900/20">
+    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4 py-8 sm:py-12 bg-gray-50 dark:from-gray-900">
       <div className="max-w-md w-full">
-        <div className="card animate-slide-up bg-gradient-to-br from-white to-purple-50 dark:from-gray-800 dark:to-purple-900/10 shadow-2xl border-2 border-purple-200 dark:border-purple-700">
+        <div className="card animate-slide-up bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700">
           <div className="text-center mb-8">
-            <div className="inline-block bg-gradient-to-r from-purple-500 via-pink-600 to-red-600 p-4 rounded-2xl mb-4 shadow-lg">
-              <UserPlus className="w-8 h-8 text-white" />
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
               Create Account
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 mt-2 text-sm sm:text-base">
+            <p className="text-gray-600 dark:text-gray-400 mt-2">
               Start tracking your expenses today
             </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="name" className="label font-semibold">
-                <User className="w-4 h-4 inline mr-2" />
-                👤 Full Name
+              <label htmlFor="name" className="label font-medium text-gray-700 dark:text-gray-300">
+                Full Name
               </label>
               <input
                 type="text"
@@ -92,16 +87,15 @@ const Register = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="input-field hover:border-purple-400 focus:ring-2 focus:ring-purple-500 transition-all"
+                className="input-field focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
                 placeholder="Enter your full name"
                 required
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="label font-semibold">
-                <Mail className="w-4 h-4 inline mr-2" />
-                📧 Email Address
+              <label htmlFor="email" className="label font-medium text-gray-700 dark:text-gray-300">
+                Email Address
               </label>
               <input
                 type="email"
@@ -109,16 +103,15 @@ const Register = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="input-field hover:border-purple-400 focus:ring-2 focus:ring-purple-500 transition-all"
+                className="input-field focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
                 placeholder="Enter your email"
                 required
               />
             </div>
 
             <div>
-              <label htmlFor="password" className="label font-semibold">
-                <Lock className="w-4 h-4 inline mr-2" />
-                🔒 Password
+              <label htmlFor="password" className="label font-medium text-gray-700 dark:text-gray-300">
+                Password
               </label>
               <input
                 type="password"
@@ -126,16 +119,15 @@ const Register = () => {
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
-                className="input-field hover:border-purple-400 focus:ring-2 focus:ring-purple-500 transition-all"
+                className="input-field focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
                 placeholder="Create a password (min 6 characters)"
                 required
               />
             </div>
 
             <div>
-              <label htmlFor="confirmPassword" className="label font-semibold">
-                <Lock className="w-4 h-4 inline mr-2" />
-                🔒 Confirm Password
+              <label htmlFor="confirmPassword" className="label font-medium text-gray-700 dark:text-gray-300">
+                Confirm Password
               </label>
               <input
                 type="password"
@@ -143,7 +135,7 @@ const Register = () => {
                 name="confirmPassword"
                 value={formData.confirmPassword}
                 onChange={handleChange}
-                className="input-field hover:border-purple-400 focus:ring-2 focus:ring-purple-500 transition-all"
+                className="input-field focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
                 placeholder="Confirm your password"
                 required
               />
@@ -152,7 +144,7 @@ const Register = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full btn-primary py-3 text-lg disabled:opacity-50 disabled:cursor-not-allowed shadow-xl hover:shadow-2xl mt-6"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-colors mt-6"
             >
               {loading ? (
                 <span className="flex items-center justify-center">
@@ -160,19 +152,19 @@ const Register = () => {
                   Creating account...
                 </span>
               ) : (
-                "✨ Create Account"
+                "Create Account"
               )}
             </button>
           </form>
 
           <div className="mt-6 text-center">
-            <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+            <p className="text-gray-600 dark:text-gray-400">
               Already have an account?{" "}
               <Link
                 to="/login"
-                className="text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300 font-semibold"
+                className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
               >
-                Sign in →
+                Sign in
               </Link>
             </p>
           </div>
