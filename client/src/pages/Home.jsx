@@ -5,29 +5,29 @@ const Home = () => {
     <div className="min-h-[calc(100vh-4rem)]">
       {/* Hero Section */}
       <div
-        className="relative bg-gray-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20 py-16 sm:py-20 lg:py-24 bg-cover bg-center min-h-[calc(100vh-4rem)]"
+        className="relative bg-cover bg-center bg-no-repeat min-h-[calc(100vh-4rem)] flex items-center"
         style={{ backgroundImage: "url(/bg_expense_tracker.avif)" }}
       >
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center animate-fade-in">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-left max-w-2xl">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-gray-900 mb-4 sm:mb-6 leading-tight">
               Smart Expense Tracker
             </h1>
-            <p className="text-lg sm:text-xl lg:text-2xl text-white mb-8 max-w-3xl mx-auto leading-relaxed px-4 drop-shadow-lg">
+            <p className="text-base sm:text-lg md:text-xl text-gray-800 mb-6 sm:mb-8 leading-relaxed font-normal">
               Take control of your finances with FinTrack. Track expenses,
               analyze spending patterns, and make informed financial decisions
               with beautiful analytics.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
                 to="/login"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg inline-block rounded-lg font-medium transition-colors shadow-md"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg text-center rounded-lg font-normal transition-colors shadow-md"
               >
                 Login
               </Link>
               <Link
                 to="/register"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg inline-block rounded-lg font-medium transition-colors shadow-md"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg text-center rounded-lg font-normal transition-colors shadow-md"
               >
                 Register
               </Link>

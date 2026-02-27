@@ -36,7 +36,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50 transition-colors duration-300">
+    <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -46,9 +46,7 @@ const Navbar = () => {
               alt="FinTrack Logo"
               className="w-10 h-10 rounded-lg object-cover"
             />
-            <span className="font-bold text-xl text-gray-900 dark:text-white">
-              FinTrack
-            </span>
+            <span className="font-normal text-xl text-gray-900">FinTrack</span>
           </Link>
 
           {/* Desktop Menu */}
@@ -56,15 +54,15 @@ const Navbar = () => {
             <div className="hidden md:flex items-center space-x-6">
               <Link
                 to="/dashboard"
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="text-gray-900 hover:text-blue-600 transition-colors font-normal"
               >
                 Dashboard
               </Link>
 
-              <div className="flex items-center space-x-4 border-l border-gray-300 dark:border-gray-600 pl-6">
+              <div className="flex items-center space-x-4 border-l border-gray-300 pl-6">
                 <button
                   onClick={toggleDarkMode}
-                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                  className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
                   aria-label="Toggle dark mode"
                 >
                   {darkMode ? (
@@ -75,15 +73,15 @@ const Navbar = () => {
                 </button>
 
                 <div className="flex items-center space-x-2">
-                  <User className="w-5 h-5 text-gray-600 dark:text-gray-400" />
-                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  <User className="w-5 h-5 text-gray-600" />
+                  <span className="text-sm font-normal text-gray-900">
                     {user?.name}
                   </span>
                 </div>
 
                 <button
                   onClick={handleLogout}
-                  className="flex items-center space-x-1 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors"
+                  className="flex items-center space-x-1 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-normal"
                 >
                   <LogOut className="w-4 h-4" />
                   <span>Logout</span>
@@ -96,7 +94,7 @@ const Navbar = () => {
             <div className="hidden md:flex items-center space-x-4">
               <button
                 onClick={toggleDarkMode}
-                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
               >
                 {darkMode ? (
                   <Sun className="w-5 h-5 text-yellow-500" />
@@ -106,13 +104,13 @@ const Navbar = () => {
               </button>
               <Link
                 to="/login"
-                className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 transition-colors"
+                className="px-4 py-2 text-gray-900 hover:text-blue-600 transition-colors font-normal"
               >
                 Login
               </Link>
               <Link
                 to="/register"
-                className="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors"
+                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors font-normal"
               >
                 Register
               </Link>
@@ -122,38 +120,38 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100"
           >
             {mobileMenuOpen ? (
-              <X className="w-6 h-6" />
+              <X className="w-6 h-6 text-gray-900" />
             ) : (
-              <Menu className="w-6 h-6" />
+              <Menu className="w-6 h-6 text-gray-900" />
             )}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200 dark:border-gray-700 animate-slide-up">
+          <div className="md:hidden py-4 border-t border-gray-200">
             {isAuthenticated ? (
               <div className="space-y-2">
                 <Link
                   to="/dashboard"
-                  className="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gradient-to-r hover:from-primary-50 hover:to-purple-50 dark:hover:from-primary-900/20 dark:hover:to-purple-900/20 rounded-lg transition-all font-medium"
+                  className="flex items-center px-4 py-3 text-gray-900 hover:bg-gray-100 rounded-lg transition-all font-normal"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  📈 Dashboard
+                  Dashboard
                 </Link>
-                <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-gray-50 to-blue-50 dark:from-gray-700 dark:to-gray-600 rounded-lg">
+                <div className="flex items-center justify-between px-4 py-3 bg-gray-50 rounded-lg">
                   <div className="flex items-center">
-                    <User className="w-5 h-5 text-primary-600 dark:text-primary-400 mr-2" />
-                    <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+                    <User className="w-5 h-5 text-blue-600 mr-2" />
+                    <span className="text-sm font-normal text-gray-900">
                       {user?.name}
                     </span>
                   </div>
                   <button
                     onClick={toggleDarkMode}
-                    className="p-2 rounded-lg hover:bg-white/50 dark:hover:bg-gray-800/50 transition-colors"
+                    className="p-2 rounded-lg hover:bg-gray-200 transition-colors"
                   >
                     {darkMode ? (
                       <Sun className="w-5 h-5 text-yellow-500" />
@@ -164,7 +162,7 @@ const Navbar = () => {
                 </div>
                 <button
                   onClick={handleLogout}
-                  className="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-lg font-medium transition-all shadow-md hover:shadow-lg"
+                  className="w-full flex items-center justify-center px-4 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-normal transition-all"
                 >
                   <LogOut className="w-4 h-4 mr-2" />
                   Logout
@@ -174,7 +172,7 @@ const Navbar = () => {
               <div className="space-y-2">
                 <button
                   onClick={toggleDarkMode}
-                  className="w-full px-4 py-3 flex items-center justify-center bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 rounded-lg font-medium transition-all"
+                  className="w-full px-4 py-3 flex items-center justify-center bg-gray-100 rounded-lg font-normal transition-all"
                 >
                   {darkMode ? (
                     <>
@@ -190,17 +188,17 @@ const Navbar = () => {
                 </button>
                 <Link
                   to="/login"
-                  className="block px-4 py-3 text-center text-gray-700 dark:text-gray-300 hover:bg-gradient-to-r hover:from-primary-50 hover:to-purple-50 dark:hover:from-primary-900/20 dark:hover:to-purple-900/20 rounded-lg font-medium transition-all"
+                  className="block px-4 py-3 text-center text-gray-900 hover:bg-gray-100 rounded-lg font-normal transition-all"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  🔑 Login
+                  Login
                 </Link>
                 <Link
                   to="/register"
-                  className="block px-4 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white hover:from-primary-700 hover:to-primary-800 rounded-lg text-center font-medium transition-all shadow-md hover:shadow-lg"
+                  className="block px-4 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-lg text-center font-normal transition-all"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  ✨ Register
+                  Register
                 </Link>
               </div>
             )}
