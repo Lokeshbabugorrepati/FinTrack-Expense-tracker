@@ -11,10 +11,22 @@ import { errorHandler, notFound } from "./middleware/errorHandler.js";
 // Load env vars
 dotenv.config();
 
-// Connect to database
-connectDB();
-
 const app = express();
+
+// Middleware to ensure DB connection for each request
+app.use(async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (error) {
+    console.error("Database connection error:", error);
+    res.status(503).json({
+      success: false,
+      message: "Database unavailable. Please try again later.",
+      error: process.env.NODE_ENV === "development" ? error.message : undefined,
+    });
+  }
+});
 
 // Body parser
 app.use(express.json());
